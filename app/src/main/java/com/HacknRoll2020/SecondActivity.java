@@ -28,13 +28,13 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     boolean running = false;
     boolean initializedStarting = false;
 
+
     SensorManager sensorManager;
     Button saveButton, cancelButton;
     EditText toiletEditText;
     SeekBar seekBar;
     MediaPlayer player;
     MediaPlayer congratsPlayer;
-    TextView testView, testView2;
 
     //Dialog box after alarm ends
     Dialog alarmOffDialog;
@@ -49,8 +49,6 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
 
         alarmOffDialog = new Dialog(this);
 
-        testView = (TextView) findViewById(R.id.testView);
-        testView2 = (TextView) findViewById(R.id.testView2);
         saveButton = (Button) findViewById(R.id.saveButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
         toiletEditText = (EditText) findViewById(R.id.toiletEditText);
@@ -63,7 +61,6 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                 float stepsToToilet = Float.parseFloat(toiletEditText.getText().toString());
                 int progressLevel = seekBar.getProgress();
                 totalFinalValue = stepsToToilet + startingSteps;
-                testView2.setText(totalFinalValue + "");
                 if(player == null) {
                     if (progressLevel == 0) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
@@ -77,7 +74,8 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     }
                 }
 
-                backToMain();
+               backToMain();
+
             }
         });
 
@@ -85,7 +83,6 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
             @Override
             public void onClick(View v) {
                 stopMusic();
-                showAlarmEndMsg();
             }
         });
 
@@ -119,6 +116,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
             player.release();
         player = null;
 
+        //showAlarmEndMsg();
         Toast.makeText(getApplicationContext(), "Alarm is Off", Toast.LENGTH_SHORT).show();
     }
 
@@ -150,7 +148,6 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(running) {
-            testView.setText(String.valueOf(event.values[0]));
             currentWalkedSteps = event.values[0];
 
             if(initializedStarting == false) {
@@ -158,8 +155,10 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                 initializedStarting = true;
             }
 
-            if(currentWalkedSteps > totalFinalValue) {
-                stopMusic();
+            if(player != null) {
+                if (currentWalkedSteps > totalFinalValue) {
+                    stopMusic();
+                }
             }
         }
     }

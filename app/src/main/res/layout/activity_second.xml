@@ -34,7 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="What type of sleeper are you?"
+        android:layout_marginLeft="28dp"
+        android:text="What Type of Sleeper Are You?"
         android:textColor="@color/colorText2"
         android:textSize="28sp"
         app:fontFamily="@font/roboto_light"
@@ -49,7 +50,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="36dp"
-        android:text="How far is your toilet?"
+        android:text="How Far is Your Toilet?"
         android:textColor="@color/colorText2"
         android:textSize="24sp"
         app:fontFamily="@font/roboto_light"
@@ -117,6 +118,7 @@
         android:layout_marginLeft="120dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_metres"
+        android:paddingLeft="15dp"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockTextView4" />
@@ -128,7 +130,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="24dp"
-        android:text="Steps"
+        android:text="STEPS"
         android:textSize="20sp"
         android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toEndOf="@+id/toiletEditText"
@@ -163,26 +165,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toiletEditText" />
 
-    <TextView
-        android:id="@+id/testView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginBottom="24dp"
-        android:hint="result2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/testView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginBottom="24dp"
-        android:hint="result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
