@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
-    Button saveButton;
+    Button saveButton, cancelButton;
     EditText toiletEditText;
     SeekBar seekBar;
 
@@ -21,14 +21,27 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         saveButton = (Button) findViewById(R.id.saveButton);
+        cancelButton = (Button) findViewById(R.id.cancelButton);
         toiletEditText = (EditText) findViewById(R.id.toiletEditText);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int stepsToToilet = Integer.parseInt(toiletEditText.getText().toString());
                 int progressLevel = seekBar.getProgress();
+
+
             }
         });
+
+//        cancelButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
     }
 }
