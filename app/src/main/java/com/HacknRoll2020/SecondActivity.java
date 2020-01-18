@@ -37,18 +37,17 @@ public class SecondActivity extends AppCompatActivity {
 
                 if(player == null) {
                     if (progressLevel == 0) {
-                        player = (MediaPlayer) MediaPlayer.create(this, R.raw.light_sleeper);
+                        player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
                     } else if (progressLevel == 1) {
-                        player = (MediaPlayer) MediaPlayer.create(this, R.raw.medium_sleeper);
+                        player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.medium_sleeper);
                     } else if (progressLevel == 2) {
-                        player = (MediaPlayer) MediaPlayer.create(this, R.raw.heavy_sleeper);
+                        player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.heavy_sleeper);
                     }
 
                     player.start();
                 }
 
-
-
+//                backToMain();
             }
         });
 
@@ -58,9 +57,16 @@ public class SecondActivity extends AppCompatActivity {
                 if (player != null)
                 player.release();
                 player = null;
-                Toast.makeText(this, "Media stopped", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "CONGRATS U WOKE UP FAGGOT", Toast.LENGTH_SHORT).show();
+
             }
         });
 
     }
+
+    private void backToMain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
