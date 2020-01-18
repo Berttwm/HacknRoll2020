@@ -19,8 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity implements SensorEventListener{
 
-    float currentWalkedSteps;
+    float currentWalkedSteps; //incrementing
+    float startingSteps; //always stay same
+    float totalFinalValue;
     boolean running = false;
+    boolean initializedStarting = false;
 
     SensorManager sensorManager;
     Button saveButton, cancelButton;
@@ -48,25 +51,18 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
             public void onClick(View view) {
                 float stepsToToilet = Float.parseFloat(toiletEditText.getText().toString());
                 int progressLevel = seekBar.getProgress();
-                Float theFinalValue = stepsToToilet + currentWalkedSteps;
-                testView2.setText(theFinalValue + "");
+                totalFinalValue = stepsToToilet + startingSteps;
+                testView2.setText(totalFinalValue + "");
                 if(player == null) {
                     if (progressLevel == 0) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
                         player.start();
-                        while (currentWalkedSteps < theFinalValue) {
-                        }
-                        stopMusic();
                     } else if (progressLevel == 1) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.medium_sleeper);
-                        if (currentWalkedSteps > theFinalValue) {
-                            stopMusic();
-                        }
+                        player.start();
                     } else if (progressLevel == 2) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.heavy_sleeper);
-                        if (currentWalkedSteps > theFinalValue) {
-                            stopMusic();
-                        }
+                        player.start();
                     }
                 }
 
@@ -113,13 +109,22 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
         running = false;
         //if you unregister, hardware will stop detecting steps
         //sensorManager.unregisterListener(this);
-    } */
+    }*/
 
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(running) {
             testView.setText(String.valueOf(event.values[0]));
             currentWalkedSteps = event.values[0];
+
+            if(initializedStarting == false) {
+                startingSteps = currentWalkedSteps;
+                initializedStarting = true;
+            }
+
+            if(currentWalkedSteps > totalFinalValue) {
+                stopMusic();
+            }
         }
     }
 
