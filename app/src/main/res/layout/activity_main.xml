@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp">
 
+            <!-- 8:00am card -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/alarm_cardview"
                 android:layout_width="370dp"
@@ -47,6 +48,70 @@
                         android:textColor="#4E4E4E"
                         android:textSize="55dp" />
 
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 10:30am card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/alarm2_cardview"
+                android:layout_below="@+id/alarm_cardview"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="20dp"
+                android:elevation="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/alarm_textview"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="10:30am"
+                        android:textColor="#4E4E4E"
+                        android:textSize="55dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 11:00am card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/alarm3_cardview"
+                android:layout_below="@+id/alarm2_cardview"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="20dp"
+                android:elevation="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/alarm_textview"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="11:00am"
+                        android:textColor="#4E4E4E"
+                        android:textSize="55dp" />
 
                 </RelativeLayout>
 
@@ -91,9 +156,7 @@
 <!--        tools:layout_editor_absoluteX="175dp" />-->
 
 
-<<<<<<< HEAD
 </RelativeLayout>
-=======
     <Button
         android:id="@+id/addAlarm"
         android:layout_width="wrap_content"
@@ -103,5 +166,5 @@
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> d260353dbae96069dd3c01a971b882bdbd9fa97d
