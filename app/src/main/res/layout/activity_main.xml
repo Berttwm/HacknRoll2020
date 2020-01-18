@@ -91,4 +91,17 @@
 <!--        tools:layout_editor_absoluteX="175dp" />-->
 
 
+<<<<<<< HEAD
 </RelativeLayout>
+=======
+    <Button
+        android:id="@+id/addAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Alarm"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> d260353dbae96069dd3c01a971b882bdbd9fa97d
