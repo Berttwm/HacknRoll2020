@@ -9,8 +9,8 @@
 
     <TimePicker
         android:id="@+id/datePicker1"
-        android:layout_width="581dp"
-        android:layout_height="223dp"
+        android:layout_width="588dp"
+        android:layout_height="213dp"
         android:timePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,21 +23,144 @@
         android:layout_marginTop="24dp"
         android:text="Set Time"
         android:textColor="@color/colorText1"
-        android:textSize="36sp"
+        android:textSize="48sp"
+        app:fontFamily="@font/roboto_thin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/stockTextView"
+        android:id="@+id/stockTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="What type of sleeper are you?"
         android:textColor="@color/colorText2"
-        android:textSize="24sp"
+        android:textSize="28sp"
+        app:fontFamily="@font/roboto_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePicker1" />
+
+    <TextView
+        android:id="@+id/stockTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="36dp"
+        android:text="How far is your toilet?"
+        android:textColor="@color/colorText2"
+        android:textSize="24sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockTextView3.2" />
+
+    <TextView
+        android:id="@+id/stockTextView3.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="Light"
+        android:textColor="@color/colorText2"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/stockTextView3.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moderate"
+        android:textColor="@color/colorText2"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/stockTextView3.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Heavy"
+        android:textColor="@color/colorText2"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="352dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="16dp"
+        android:max="2"
+        android:progress="0"
+        android:progressTint="#F3F4F5"
+        android:thumbTint="#484E59"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockTextView2"
+        tools:minWidth="300dp" />
+
+    <EditText
+        android:id="@+id/toiletEditText"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_metres"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockTextView4" />
+
+    <TextView
+        android:id="@+id/stockTextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="24dp"
+        android:text="Steps"
+        android:textSize="20sp"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintStart_toEndOf="@+id/toiletEditText"
+        app:layout_constraintTop_toBottomOf="@+id/stockTextView4" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#484E59"
+        android:fontFamily="@font/roboto_light"
+        android:text="Save"
+        android:textColor="#FCFCFC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toiletEditText" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/roboto_light"
+        android:shadowRadius="0"
+        android:text="@android:string/cancel"
+        app:layout_constraintCircleRadius="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toiletEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

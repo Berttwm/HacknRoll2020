@@ -25,18 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initValues();
-        initListeners();
+        //initListeners();
 
-    }
-
-    private void initValues(){
-        addAlarm = (Button) findViewById(R.id.addAlarm);
-        alarm1_switch = (ImageView) findViewById(R.id.alarm1_switch);
-        alarm2_switch = (ImageView) findViewById(R.id.alarm2_switch);
-        alarm3_switch = (ImageView) findViewById(R.id.alarm3_switch);
-    }
-
-    private void initListeners() {
         alarm1_switch.setOnClickListener(this);
         alarm2_switch.setOnClickListener(this);
         alarm3_switch.setOnClickListener(this);
@@ -49,7 +39,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startSecondActivity();
             }
         });
+
     }
+
+    private void initValues(){
+        addAlarm = (Button) findViewById(R.id.addAlarm);
+        alarm1_switch = (ImageView) findViewById(R.id.alarm1_switch);
+        alarm2_switch = (ImageView) findViewById(R.id.alarm2_switch);
+        alarm3_switch = (ImageView) findViewById(R.id.alarm3_switch);
+    }
+
+/*    private void initListeners() {
+        alarm1_switch.setOnClickListener(this);
+        alarm2_switch.setOnClickListener(this);
+        alarm3_switch.setOnClickListener(this);
+
+
+
+        addAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSecondActivity();
+            }
+        });
+    }*/
 
     private void startSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
