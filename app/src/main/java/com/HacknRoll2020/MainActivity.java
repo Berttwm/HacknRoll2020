@@ -4,16 +4,44 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button addAlarm;
+    ImageView alarm1_switch;
+    ImageView alarm2_switch;
+    ImageView alarm3_switch;
+
+    boolean alarm1_status = true;
+    boolean alarm2_status = false;
+    boolean alarm3_status = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button addAlarm = (Button) findViewById(R.id.addAlarm);
+
+        initValues();
+        initListeners();
+
+    }
+
+    private void initValues(){
+        addAlarm = (Button) findViewById(R.id.addAlarm);
+        alarm1_switch = (ImageView) findViewById(R.id.alarm1_switch);
+        alarm2_switch = (ImageView) findViewById(R.id.alarm2_switch);
+        alarm3_switch = (ImageView) findViewById(R.id.alarm3_switch);
+    }
+
+    private void initListeners() {
+        alarm1_switch.setOnClickListener(this);
+        alarm2_switch.setOnClickListener(this);
+        alarm3_switch.setOnClickListener(this);
+
+
 
         addAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +56,40 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.alarm1_switch:
+                if(alarm1_status == false) {
+                    alarm1_switch.setImageResource(R.drawable.switch_off);
+                    alarm1_status = true;
+                } else {
+                    alarm1_switch.setImageResource(R.drawable.switch_on);
+                    alarm1_status = false;
+                }
+                break;
+
+            case R.id.alarm2_switch:
+                if(alarm2_status == false) {
+                    alarm2_switch.setImageResource(R.drawable.switch_off);
+                    alarm2_status = true;
+                } else {
+                    alarm2_switch.setImageResource(R.drawable.switch_on);
+                    alarm2_status = false;
+                }
+                break;
+
+            case R.id.alarm3_switch:
+                if(alarm3_status == false) {
+                    alarm3_switch.setImageResource(R.drawable.switch_off);
+                    alarm3_status = true;
+                } else {
+                    alarm3_switch.setImageResource(R.drawable.switch_on);
+                    alarm3_status = false;
+                }
+                break;
+        }
+    }
 }
 //
 //public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,

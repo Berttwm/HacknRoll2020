@@ -7,4 +7,6 @@
     <color name="colorText1">#282C33</color>
     <color name="colorText2">#484E59</color>
     <color name="colorText3">#282C33</color>
+
+    <color name="main_activity_text">#6d3838</color>
 </resources>

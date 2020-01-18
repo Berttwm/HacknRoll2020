@@ -45,8 +45,17 @@
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/roboto_light"
                         android:text="8:00am"
-                        android:textColor="#4E4E4E"
+                        android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />
+
+                    <ImageView
+                        android:id="@+id/alarm1_switch"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginLeft="50dp"
+                        android:src="@drawable/switch_on"
+                        android:layout_toRightOf="@id/alarm_textview"/>
 
 
                 </RelativeLayout>
@@ -78,8 +87,17 @@
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/roboto_light"
                         android:text="10:30am"
-                        android:textColor="#4E4E4E"
+                        android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />
+
+                    <ImageView
+                        android:id="@+id/alarm2_switch"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginLeft="50dp"
+                        android:src="@drawable/switch_off"
+                        android:layout_toRightOf="@id/alarm2_textview"/>
 
                 </RelativeLayout>
 
@@ -110,8 +128,17 @@
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/roboto_light"
                         android:text="11:00am"
-                        android:textColor="#4E4E4E"
+                        android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />
+
+                    <ImageView
+                        android:id="@+id/alarm3_switch"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginLeft="50dp"
+                        android:src="@drawable/switch_off"
+                        android:layout_toRightOf="@id/alarm3_textview"/>
 
                 </RelativeLayout>
 
@@ -123,14 +150,12 @@
 
     <Button
         android:id="@+id/addAlarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:text="Add Alarm"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/add_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
-
 
         android:textColor="@android:color/black" />
 
