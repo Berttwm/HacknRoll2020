@@ -35,7 +35,7 @@
             android:layout_marginBottom="25dp">
 
             <TextView
-                android:id="@+id/endAlarm_textView"
+                android:id="@+id/endAlarm_headerMsg"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 android:text="Rise and Shine!"/>
 
             <TextView
-                android:id="@+id/pauseTimerMsg_textView"
+                android:id="@+id/endAlarm_bodyMsg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -75,12 +75,8 @@
                     android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
 
-
-
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="10dp"
-
-
 
                     android:background="@drawable/edit_text_metres"
                     android:fontFamily="@font/roboto_light"

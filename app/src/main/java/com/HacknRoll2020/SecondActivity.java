@@ -1,7 +1,10 @@
 package com.HacknRoll2020;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -30,13 +33,21 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     EditText toiletEditText;
     SeekBar seekBar;
     MediaPlayer player;
+    MediaPlayer congratsPlayer;
     TextView testView, testView2;
+
+    //Dialog box after alarm ends
+    Dialog alarmOffDialog;
+    Button closeButton;
+    TextView headerMsg, bodyMsg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        alarmOffDialog = new Dialog(this);
 
         testView = (TextView) findViewById(R.id.testView);
         testView2 = (TextView) findViewById(R.id.testView2);
@@ -66,7 +77,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     }
                 }
 
-//                backToMain();
+                backToMain();
             }
         });
 
@@ -74,16 +85,41 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
             @Override
             public void onClick(View v) {
                 stopMusic();
+                showAlarmEndMsg();
             }
         });
 
+    }
+
+    private void showAlarmEndMsg() {
+
+        if(congratsPlayer == null) {
+            congratsPlayer = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.congrats_sound);
+            congratsPlayer.start();
+        }
+
+        alarmOffDialog.setContentView(R.layout.end_alarm_popup);
+        closeButton = (Button) alarmOffDialog.findViewById(R.id.button_close);
+        headerMsg = (TextView) alarmOffDialog.findViewById(R.id.endAlarm_headerMsg);
+        bodyMsg = (TextView) alarmOffDialog.findViewById(R.id.endAlarm_bodyMsg);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmOffDialog.dismiss();
+            }
+        });
+
+        alarmOffDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alarmOffDialog.show();
     }
 
     private void stopMusic() {
         if (player != null)
             player.release();
         player = null;
-        Toast.makeText(getApplicationContext(), "CONGRATS U WOKE UP FAGGOT", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), "Alarm is Off", Toast.LENGTH_SHORT).show();
     }
 
     private void backToMain() {
