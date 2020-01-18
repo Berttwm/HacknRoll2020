@@ -7,24 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_click"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="pick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="101dp" />
 
-    <TextView
-        android:id="@+id/TV_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:text="Result"
-        app:layout_constraintTop_toBottomOf="@+id/btn_click"
-        tools:layout_editor_absoluteX="175dp" />
+    
+<!--    <Button-->
+<!--        android:id="@+id/btn_click"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="pick"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout_editor_absoluteY="101dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/TV_result"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="120dp"-->
+<!--        android:text="Result"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_click"-->
+<!--        tools:layout_editor_absoluteX="175dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
