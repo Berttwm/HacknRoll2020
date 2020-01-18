@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:gravity="center">
+
+    <!--Pop-up Card when alarm ends-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+
+        app:cardBackgroundColor="#fcfcfc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/row_wallet_redeem_img"
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/popup_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp">
+
+            <TextView
+                android:id="@+id/endAlarm_textView"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:textColor="#282b31"
+
+                android:fontFamily="@font/roboto_light"
+                android:text="Rise and Shine!"/>
+
+            <TextView
+                android:id="@+id/pauseTimerMsg_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#282b31"
+
+                android:fontFamily="@font/roboto_thin"
+                android:text= "You survived another day, see you tomorrow."/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_close"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+
+
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+
+
+
+                    android:background="@drawable/edit_text_metres"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="okay"
+                    android:textAlignment="center"
+                    android:textColor="#282b31"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
