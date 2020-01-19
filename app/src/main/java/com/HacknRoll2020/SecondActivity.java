@@ -70,15 +70,18 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     if (progressLevel == 0) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
                         player.start();
-                        alarmRingMessage();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+//                        alarmRingMessage();
                     } else if (progressLevel == 1) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.medium_sleeper);
                         player.start();
-                        alarmRingMessage();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+                        //alarmRingMessage();
                     } else if (progressLevel == 2) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.heavy_sleeper);
                         player.start();
-                        alarmRingMessage();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+                        //alarmRingMessage();
                     }
                 }
 
@@ -98,12 +101,13 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
 
     private void alarmRingMessage() {
         alarmOnDialog.setContentView(R.layout.running_alarm_popup);
-        headerMsg = (TextView) alarmOffDialog.findViewById(R.id.runningAlarm_headerMsg);
-        bodyMsg = (TextView) alarmOffDialog.findViewById(R.id.runningAlarm_bodyMsg);
+        run_headerMsg = (TextView) alarmOnDialog.findViewById(R.id.runningAlarm_headerMsg);
+        run_bodyMsg = (TextView) alarmOnDialog.findViewById(R.id.runningAlarm_bodyMsg);
 
-        alarmOffDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        alarmOffDialog.show();
+        alarmOnDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alarmOnDialog.show();
     }
+
 
     private void showAlarmEndMsg() {
 
@@ -174,7 +178,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
 
             if((currentWalkedSteps > totalFinalValue) && (player != null)) {
                 stopMusic();
-                alarmOnDialog.dismiss();
+//                alarmOnDialog.dismiss();
                 showAlarmEndMsg();
             }
 
