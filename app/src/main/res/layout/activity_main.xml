@@ -43,7 +43,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/roboto_light"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="8:00am"
                         android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />
@@ -85,7 +85,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/roboto_light"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="10:30am"
                         android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />
@@ -126,7 +126,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/roboto_light"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="11:00am"
                         android:textColor="@color/main_activity_text"
                         android:textSize="55dp" />

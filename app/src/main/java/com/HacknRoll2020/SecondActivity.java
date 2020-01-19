@@ -53,6 +53,8 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
         setContentView(R.layout.activity_second);
 
         alarmOffDialog = new Dialog(this);
+        alarmOnDialog = new Dialog(this);
+
 
         saveButton = (Button) findViewById(R.id.saveButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
@@ -70,18 +72,19 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     if (progressLevel == 0) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
-//                        alarmRingMessage();
+//                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
+                        alarmRingMessage();
+
                     } else if (progressLevel == 1) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.medium_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
-                        //alarmRingMessage();
+//                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
+                        alarmRingMessage();
                     } else if (progressLevel == 2) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.heavy_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
-                        //alarmRingMessage();
+//                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
+                        alarmRingMessage();
                     }
                 }
 
@@ -178,7 +181,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
 
             if((currentWalkedSteps > totalFinalValue) && (player != null)) {
                 stopMusic();
-//                alarmOnDialog.dismiss();
+                alarmOnDialog.dismiss();
                 showAlarmEndMsg();
             }
 

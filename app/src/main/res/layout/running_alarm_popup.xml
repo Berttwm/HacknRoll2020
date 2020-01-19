@@ -19,13 +19,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <ImageView
-            android:id="@+id/row_wallet_redeem_img"
-            android:layout_width="match_parent"
-            android:layout_height="205dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/popup_background" />
 
         <LinearLayout
             android:layout_width="match_parent"
