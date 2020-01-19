@@ -42,6 +42,10 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     Button closeButton;
     TextView headerMsg, bodyMsg;
 
+    //Dialog box before alarm ends
+    Dialog alarmOnDialog;
+    TextView run_headerMsg, run_bodyMsg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +97,12 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     }
 
     private void alarmRingMessage() {
+        alarmOnDialog.setContentView(R.layout.running_alarm_popup);
+        headerMsg = (TextView) alarmOffDialog.findViewById(R.id.runningAlarm_headerMsg);
+        bodyMsg = (TextView) alarmOffDialog.findViewById(R.id.runningAlarm_bodyMsg);
 
+        alarmOffDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alarmOffDialog.show();
     }
 
     private void showAlarmEndMsg() {
@@ -165,6 +174,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
 
             if((currentWalkedSteps > totalFinalValue) && (player != null)) {
                 stopMusic();
+                alarmOnDialog.dismiss();
                 showAlarmEndMsg();
             }
 
