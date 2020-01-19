@@ -70,17 +70,17 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     if (progressLevel == 0) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.light_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
 //                        alarmRingMessage();
                     } else if (progressLevel == 1) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.medium_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
                         //alarmRingMessage();
                     } else if (progressLevel == 2) {
                         player = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.heavy_sleeper);
                         player.start();
-                        Toast.makeText(getApplicationContext(), "LET'S GET WALKIMG!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "LET'S GET WALKING!", Toast.LENGTH_SHORT).show();
                         //alarmRingMessage();
                     }
                 }
