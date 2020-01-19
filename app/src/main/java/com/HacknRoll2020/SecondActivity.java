@@ -28,6 +28,8 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
     boolean running = false;
     boolean initializedStarting = false;
 
+    //boolean alarm_status;
+
     SensorManager sensorManager;
     Button saveButton, cancelButton;
     EditText toiletEditText;
@@ -77,7 +79,7 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
                     }
                 }
 
-                backToMain();
+                //backToMain();
             }
         });
 
@@ -119,11 +121,13 @@ public class SecondActivity extends AppCompatActivity implements SensorEventList
             player.release();
         player = null;
 
+        showAlarmEndMsg();
         Toast.makeText(getApplicationContext(), "Alarm is Off", Toast.LENGTH_SHORT).show();
     }
 
     private void backToMain() {
         Intent intent = new Intent(this, MainActivity.class);
+        //intent.putExtra("ALARM_STATUS", "on");
         startActivity(intent);
     }
 

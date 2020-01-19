@@ -1,10 +1,15 @@
 package com.HacknRoll2020;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,12 +24,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean alarm2_status = false;
     boolean alarm3_status = false;
 
+    boolean alarm_off;
 
+    //Dialog box after alarm ends
+    MediaPlayer congratsPlayer;
+    Dialog alarmOffDialog;
+    Button closeButton;
+    TextView headerMsg, bodyMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+
+
+//        String alarm_status = intent.getStringExtra("ALARM_OFF");
+//        String alarm_status = intent.getStringExtra("ALARM_OFF");
+//        if(alarm_status.equals("off")) {
+//            alarm_off = true;
+//        }
+
 
         initValues();
         //initListeners();
@@ -33,8 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alarm2_switch.setOnClickListener(this);
         alarm3_switch.setOnClickListener(this);
 
-
-
         addAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +61,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        if(alarm_off) {
+            showAlarmEndMsg();
+        }
+
+    }
+
+    private void showAlarmEndMsg() {
+
+        if(congratsPlayer == null) {
+            congratsPlayer = (MediaPlayer) MediaPlayer.create(getApplicationContext(), R.raw.congrats_sound);
+            congratsPlayer.start();
+        }
+
+        alarmOffDialog.setContentView(R.layout.end_alarm_popup);
+        closeButton = (Button) alarmOffDialog.findViewById(R.id.button_close);
+        headerMsg = (TextView) alarmOffDialog.findViewById(R.id.endAlarm_headerMsg);
+        bodyMsg = (TextView) alarmOffDialog.findViewById(R.id.endAlarm_bodyMsg);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmOffDialog.dismiss();
+            }
+        });
+
+        alarmOffDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alarmOffDialog.show();
     }
 
     private void initValues(){
